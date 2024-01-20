@@ -3,7 +3,7 @@ pipeline{
 
   stages{
     stage('Checkout'){
-      step{
+      steps{
         // git clone https://github.com/Arunodhai/Kaiburr-Task1.git
       }
     }
