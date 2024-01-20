@@ -4,6 +4,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
+        echo "Jenkins Demo"
         // git clone https://github.com/Arunodhai/Kaiburr-Task1.git
       }
     }
