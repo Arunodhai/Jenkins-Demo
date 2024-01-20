@@ -12,7 +12,7 @@ pipeline{
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'cd kaiburrTask1  && mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Static Code Analysis') {
@@ -21,7 +21,7 @@ pipeline{
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'cd kaiburrTask1 && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
     }
