@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri : mongodb+srv://amenp2mca22016:Arunodhai007@cluster0.hhalde3.mongodb.net/?retryWrites=true&w=majority
+      database : Task
