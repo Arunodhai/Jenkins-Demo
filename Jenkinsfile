@@ -17,7 +17,7 @@ pipeline {
                 sh 'ls -ltr'
                 
                 // Install necessary packages for Java
-                sh 'apt-get update && apt-get install -y openjdk-21-jre-headless'
+                sh 'apt-get update && apt-get install -y openjdk-17-jre-headless'
 
                 // Install Maven
                 sh 'apt-get install -y maven'
