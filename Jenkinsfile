@@ -14,26 +14,6 @@ pipeline{
       }
     }
 
-    stage('Install Maven and Java') {
-            steps {
-                // Install Maven 3.9.6
-                sh '''
-                    wget -O /opt/apache-maven-3.6.3-bin.tar.gz http://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-                    tar xzf /opt/apache-maven-3.6.3-bin.tar.gz -C /opt
-                    ln -s /opt/apache-maven-3.6.3 /opt/maven
-                    export PATH=$PATH:/opt/maven/bin
-                '''
-                
-                // Install Java 21
-                sh '''
-                    wget -O /opt/jdk-21.tar.gz https://download.java.net/java/early_access/jdk21/23/GPL/openjdk-21_linux-x64_bin.tar.gz
-                    tar xzf /opt/jdk-21.tar.gz -C /opt
-                    ln -s /opt/jdk-21 /opt/java
-                    export PATH=$PATH:/opt/java/bin
-                '''
-            }
-        }
-
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
