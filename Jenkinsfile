@@ -17,8 +17,7 @@ pipeline {
                 sh 'ls -ltr'
                 
                 // Install necessary packages for Java
-                sh 'apt-get update && apt-get install -y wget && mkdir -p /tmp/downloads && wget https://download.java.net/java/GA/jdk21/14/GPL/openjdk-21_linux-x64_bin.deb -P /tmp/downloads'
-                sh 'dpkg -i /tmp/downloads/jdk-21_linux-x64_bin.deb && rm -rf /tmp/downloads'
+                sh 'apt-get update && sudo apt-get install openjdk-21-jre-headless'
 
                 // Install Maven
                 sh 'apt-get install -y maven'
