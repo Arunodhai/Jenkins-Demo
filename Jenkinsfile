@@ -51,7 +51,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u arunodhai -p ${dockerhubpwd}'
                     }
-                   sh 'docker push arunodhai/ultimate-cicd'
+                   sh 'docker push ${DOCKER_IMAGE}'
                 }
                     
                 }
